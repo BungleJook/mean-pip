@@ -1,0 +1,1 @@
+angular.module('postTitleList', ['core.post']);

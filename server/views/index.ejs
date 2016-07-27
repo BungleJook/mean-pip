@@ -1,11 +1,51 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" ng-app="angularPip">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="utf-8">
+    <title>angular-pip</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <script src="vendor/bower_components/angular/angular.js"></script>
+    <script src="vendor/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="vendor/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="vendor/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+
+    <header class="jumbotron">
+        <section class="container text-center">
+            <h1><a href="#!/">{{"AngularJS, Bootstrap and Sass"}}</a></h1>
+            <p>Basic project seed focused on AngularJS.</p>
+        </section>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div ui-view class="col-md-10"></div>
+            <sidebar class="col-md-2 panel panel-default">
+                <post-title-list></post-title-list>
+            </sidebar>
+        </div>
+    </div>
+
+    <footer class="container footer">
+        <p>&copy; angular-pip 2016</p>
+    </footer>
+
+    <!-- Main modules -->
+    <script src="app/app.module.js"></script>
+    <script src="app/core/core/core.module.js"></script>
+    
+    <!-- Core features -->
+    <script src="app/core/post/post.module.js"></script>
+    <script src="app/core/post/post.service.js"></script>
+
+    <!-- Posts components -->
+    <script src="app/post-list/post-list.module.js"></script>
+    <script src="app/post-list/post-list.component.js"></script>
+    <script src="app/post-detail/post-detail.module.js"></script>
+    <script src="app/post-detail/post-detail.component.js"></script>
+    <script src="app/post-title-list/post-title-list.module.js"></script>
+    <script src="app/post-title-list/post-title-list.component.js"></script>
+
   </body>
 </html>

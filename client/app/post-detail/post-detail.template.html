@@ -1,0 +1,8 @@
+<section>
+    <article class="panel panel-default">
+        <h2><a href="#!/posts">{{$ctrl.post.title}}</a></h2>
+        <p><em>{{$ctrl.post.date_modified | date: "MMM dd, yyyy"}}</em></p>
+        <p>{{$ctrl.post.text}}</p>
+        <p>Comments: {{$ctrl.post.comments.length}}</p>
+    </article>
+</section>
