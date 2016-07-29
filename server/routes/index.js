@@ -40,15 +40,19 @@ router.param('comment', function(req, res, next, id) {
 // get all posts
 router.get('/posts', function(req, res, next) {
     Post.find(function(err, posts) {
-        if(err) { return next(err); }
+        if (err) { return next(err); }
 
         res.json(posts);
     });
 });
 
 // get post by id
-router.get('/posts/:post', function(req, res) {
-    res.json(req.post);
+router.get('/posts/:post', function(req, res, next) {
+    req.post.populate('comments', function(err, post) {
+        if (err) { return next(err); }
+
+        res.json(post);
+    });
 });
 
 // post new post
@@ -56,7 +60,7 @@ router.post('/posts', function(req, res, next) {
     var post = new Post(req.body);
 
     post.save(function(err, post) {
-        if(err) { return next(err); }
+        if (err) { return next(err); }
 
         res.json(post);
     });
