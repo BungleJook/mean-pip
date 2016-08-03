@@ -95,8 +95,8 @@ router.put('/posts/:post/comments/:comment/upvote', function(req, res, next) {
         if (err) { return next(err); }
 
         res.json(comment);
-    })
-})
+    });
+});
 
 /* end */
 

@@ -2,7 +2,7 @@
     <ul class="list-group">
         <li ng-repeat="post in $ctrl.posts" class="list-group-item">
             <article>
-                <h1><a href="#!/posts/{{post.id}}">{{post.title}}</a></h1>
+                <h1><a href="#!/posts/{{post._id}}">{{post.title}}</a></h1>
                 <p>{{post.text}}</p>
                 <p><em>{{post.date_modified | date: "yyyy, MMMM dd"}}</em></p>
                 <p>Comments: <a href="#!/posts/{{post.id}}">{{post.comments.length}}</a></p>

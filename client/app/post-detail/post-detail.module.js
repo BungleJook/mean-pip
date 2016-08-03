@@ -5,7 +5,7 @@ angular.module('postDetail', ['ui.router', 'core.post'])
 
             $stateProvider
                 .state('post-detail', {
-                    url: '/posts/{id}',
+                    url: '/posts/{postId}',
                     template: '<post-detail></post-detail>'
                 });
         }
