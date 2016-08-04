@@ -1,8 +1,14 @@
 <section>
-    <article class="panel panel-default">
+    <article class="list-group list-group-item">
         <h2><a href="#!/posts">{{$ctrl.post.title}}</a></h2>
         <p><em>{{$ctrl.post.date_modified | date: "MMM dd, yyyy"}}</em></p>
         <p>{{$ctrl.post.text}}</p>
         <p>Comments: {{$ctrl.post.comments.length}}</p>
+        <ul class="list-group">
+            <li ng-repeat="comment in $ctrl.post.comments" class="list-group-item">
+                <p>{{comment.author}}: {{comment.body}}</p>
+                <p>Upvotes: {{comment.upvotes}} | {{comment.date_created | date: "MMM dd, yyyy"}}.</p>
+            </li>
+        </ul>
     </article>
 </section>

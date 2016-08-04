@@ -5,7 +5,7 @@
                 <h1><a href="#!/posts/{{post._id}}">{{post.title}}</a></h1>
                 <p>{{post.text}}</p>
                 <p><em>{{post.date_modified | date: "yyyy, MMMM dd"}}</em></p>
-                <p>Comments: <a href="#!/posts/{{post.id}}">{{post.comments.length}}</a></p>
+                <p>Comments: <a href="#!/posts/{{post._id}}">{{post.comments.length}}</a></p>
             </article>
         </li>
     </ul>
