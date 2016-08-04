@@ -1,0 +1,14 @@
+<section class="panel panel-default">
+    <form ng-submit = "$ctrl.addPost()" class="panel-body">
+        <h1>Add a new post!</h1>
+        <div class="form-group">
+            <p>Title:</p>
+            <input type="text" class="form-control" placeholder="Title" ng-model="$ctrl.title">
+        </div>
+        <div class="form-group">
+            <p>Content:</p>
+            <textarea type="text" class="form-control" placeholder="Content" ng-model="$ctrl.text"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</section>

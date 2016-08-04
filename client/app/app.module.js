@@ -4,7 +4,8 @@ angular.module('angularPip', [
     'core',
     'postList',
     'postDetail',
-    'postTitleList'])
+    'postTitleList',
+    'postAdd'])
     .config(['$locationProvider', '$urlRouterProvider',
         function config($locationProvider, $urlRouterProvider) {
             $locationProvider.hashPrefix('!');
