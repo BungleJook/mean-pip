@@ -2,8 +2,8 @@ angular
     .module('postAdd')
     .component('postAdd', {
         templateUrl: 'app/post-add/post-add.template.html',
-        controller: ['Post', 
-            function PostAddController(Post) {
+        controller: ['Post', 'BroadcastService', 
+            function PostAddController(Post, BroadcastService) {
                 var self = this;
 
                 self.addPost = function() {
@@ -12,9 +12,12 @@ angular
                     self.post.title = self.title;
                     self.post.text = self.text;
 
-                    Post.save(self.post, function() {
-                        console.log("Saved!");
+                    self.post.$save(self.post, function() {
+                        BroadcastService.broadcast('posts-updated');
                     });
+
+                    self.title = "";
+                    self.text = "";
                 }
             }
         ]
