@@ -10,5 +10,6 @@
                 <p>Upvotes: {{comment.upvotes}} | {{comment.date_created | date: "MMM dd, yyyy"}}.</p>
             </li>
         </ul>
+        <button ng-click="$ctrl.deletePost()" class="btn btn-primary">Delete Post</button>
     </article>
 </section>

@@ -66,6 +66,16 @@ router.post('/posts', function(req, res, next) {
     });
 });
 
+// delete post by id
+router.delete('/posts/:post', function(req, res, next) {
+    Post.remove({_id: req.params.post}, function(err, post) {
+        if (err) {
+            return next(err);
+        }
+        res.send('DELETED');
+    });
+});
+
 // COMMENTS
 // get comment by id
 router.get('/posts/:post/comments/:comment', function(req, res) {

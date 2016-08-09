@@ -1,4 +1,4 @@
-angular.module('postDetail', ['ui.router', 'core.post'])
+angular.module('postDetail', ['ui.router', 'core.post', 'core.broadcast'])
     .config(['$locationProvider', '$stateProvider',
         function config($locationProvider, $stateProvider) {
             $locationProvider.hashPrefix('!');
